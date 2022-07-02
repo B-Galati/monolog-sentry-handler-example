@@ -7,14 +7,15 @@
         "php": ">=8.1",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "nyholm/psr7": "^1.5",
+        "sentry/sentry": "^3.6",
         "symfony/console": "6.1.*",
         "symfony/dotenv": "6.1.*",
         "symfony/flex": "^2",
         "symfony/framework-bundle": "6.1.*",
+        "symfony/http-client": "6.1.*",
         "symfony/runtime": "6.1.*",
         "symfony/yaml": "6.1.*"
-    },
-    "require-dev": {
     },
     "config": {
         "allow-plugins": {
