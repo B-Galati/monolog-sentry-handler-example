@@ -22,3 +22,18 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    BGalati\MonologSentryHandler\SentryHandler:
+
+    Sentry\State\HubInterface:
+        factory: ['@App\SentryFactory', 'create']
+        arguments:
+            $dsn: '%env(SENTRY_DSN)%'
+            $environment: symfony_test_environment
+            $release: 2022.07.02
+            $projectRoot: '%kernel.project_dir%'
+            $cacheDir: '%kernel.cache_dir%'
+
+    # Resolve log PSR placeholders, it can be useful to make breadcrumbs easier to read
+    Monolog\Processor\PsrLogMessageProcessor:
+        tags: [monolog.processor]

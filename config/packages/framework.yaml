@@ -16,6 +16,8 @@ framework:
     #fragments: true
     php_errors:
         log: true
+        # @see https://symfony.com/doc/master/reference/configuration/framework.html#log
+#        log: 8191 # php -r "echo E_ALL & ~E_USER_DEPRECATED & ~E_DEPRECATED;"
 
 when@test:
     framework:
