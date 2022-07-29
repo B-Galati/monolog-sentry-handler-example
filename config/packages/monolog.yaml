@@ -4,6 +4,7 @@ monolog:
     handlers:
         sentry:
             type: fingers_crossed
+            process_psr_3_messages: true
             action_level: warning
             handler: sentry_buffer
             excluded_http_codes: [ 400, 401, 403, 404, 405 ]
@@ -14,7 +15,7 @@ monolog:
             handler: sentry_handler
         sentry_handler:
             type: service
-            id: 'BGalati\MonologSentryHandler\SentryHandler'
+            id: 'App\SentryHandler'
 
 when@dev:
     monolog:
