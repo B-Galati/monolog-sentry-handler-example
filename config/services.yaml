@@ -22,14 +22,3 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
-
-    App\SentryHandler:
-
-    Sentry\State\HubInterface:
-        factory: ['@App\SentryFactory', 'create']
-        arguments:
-            $dsn: '%env(SENTRY_DSN)%'
-            $environment: symfony_test_environment
-            $release: 2022.07.02
-            $projectRoot: '%kernel.project_dir%'
-            $cacheDir: '%kernel.cache_dir%'

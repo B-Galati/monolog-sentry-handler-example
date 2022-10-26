@@ -1,0 +1,40 @@
+sentry:
+    dsn: '%env(SENTRY_DSN)%'
+    register_error_listener: false # Disabled to avoid duplicated Sentry events
+    tracing: false
+    messenger: false # Duplicates Sentry events as it is already managed through Monolog.
+    options:
+        attach_stacktrace: false # Disabled to avoid stacktrace on pure logs
+        default_integrations: false
+        integrations:
+            - 'Sentry\Integration\RequestIntegration'
+            - 'Sentry\Integration\EnvironmentIntegration'
+            - 'Sentry\Integration\FrameContextifierIntegration'
+
+monolog:
+    handlers:
+        sentry:
+            type: fingers_crossed
+            action_level: error
+            handler: sentry_buffer
+            include_stacktraces: true
+            excluded_http_codes: [ 400, 401, 403, 404, 405 ]
+            channels: [ "!event" ]
+        sentry_buffer:
+            type: buffer
+            handler: sentry_handler
+            level: info
+            process_psr_3_messages: true
+        sentry_handler:
+            type: service
+            id: App\SentryHandler
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    App\SentryHandler:
+    Sentry\Integration\RequestIntegration:
+    Sentry\Integration\EnvironmentIntegration:
+    Sentry\Integration\FrameContextifierIntegration:
