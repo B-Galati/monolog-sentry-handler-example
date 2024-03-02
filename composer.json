@@ -10,17 +10,17 @@
         "bgalati/monolog-sentry-handler": "^2.0",
         "nyholm/psr7": "^1.5",
         "sentry/sentry-symfony": "^4.4",
-        "symfony/amqp-messenger": "6.1.*",
-        "symfony/console": "6.1.*",
-        "symfony/dotenv": "6.1.*",
+        "symfony/amqp-messenger": "6.3.*",
+        "symfony/console": "6.3.*",
+        "symfony/dotenv": "6.3.*",
         "symfony/flex": "^2",
-        "symfony/framework-bundle": "6.1.*",
-        "symfony/http-client": "6.1.*",
-        "symfony/messenger": "6.1.*",
+        "symfony/framework-bundle": "6.3.*",
+        "symfony/http-client": "6.3.*",
+        "symfony/messenger": "6.3.*",
         "symfony/monolog-bundle": "^3.8",
-        "symfony/runtime": "6.1.*",
-        "symfony/security-bundle": "6.1.*",
-        "symfony/yaml": "6.1.*"
+        "symfony/runtime": "6.3.*",
+        "symfony/security-bundle": "6.3.*",
+        "symfony/yaml": "6.3.*"
     },
     "config": {
         "allow-plugins": {
@@ -72,12 +72,12 @@
     "extra": {
         "symfony": {
             "allow-contrib": true,
-            "require": "6.1.*"
+            "require": "6.3.*"
         }
     },
     "require-dev": {
-        "symfony/debug-bundle": "6.1.*",
-        "symfony/stopwatch": "6.1.*",
-        "symfony/web-profiler-bundle": "6.1.*"
+        "symfony/debug-bundle": "6.3.*",
+        "symfony/stopwatch": "6.3.*",
+        "symfony/web-profiler-bundle": "6.3.*"
     }
 }
